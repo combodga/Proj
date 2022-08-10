@@ -95,7 +95,7 @@ func getUrl(id string) (string, bool) {
 func shortener(s string) (string, error) {
 	hasher := crypto.MD5.New()
 	if _, err := hasher.Write([]byte(s)); err != nil {
-		return "", fmt.Errorf("Reduction error URL: %v", err)
+		return "", fmt.Errorf("reduction error url: %v", err)
 	}
 	hash := string(hasher.Sum([]byte{}))
 	hash = hash[len(hash)-5:]
